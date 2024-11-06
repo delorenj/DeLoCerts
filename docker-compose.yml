@@ -1,11 +1,11 @@
 services:
-  lego:
+  lego-delorenzo:
     image: goacme/lego
     environment:
       - NAMECHEAP_API_USER=${NAMECHEAP_API_USER}
       - NAMECHEAP_API_KEY=${NAMECHEAP_API_KEY}
     volumes:
-      - ./lego:/root/.lego
+      - ./lego/delorenzo:/root/.lego
     working_dir: /root
     command: >
       --email jaradd@gmail.com
@@ -13,8 +13,25 @@ services:
       --dns.resolvers 1.1.1.1
       --domains "*.delorenzo.family"
       --domains "delorenzo.family"
+      --accept-tos
+      --path /root/.lego
+      run
+
+  lego-delo:
+    image: goacme/lego
+    environment:
+      - NAMECHEAP_API_USER=${NAMECHEAP_API_USER}
+      - NAMECHEAP_API_KEY=${NAMECHEAP_API_KEY}
+    volumes:
+      - ./lego/delo:/root/.lego
+    working_dir: /root
+    command: >
+      --email jaradd@gmail.com
+      --dns namecheap
+      --dns.resolvers 1.1.1.1
       --domains "*.delo.sh"
       --domains "delo.sh"
       --accept-tos
       --path /root/.lego
       run
+

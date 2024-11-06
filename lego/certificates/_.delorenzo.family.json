@@ -1,0 +1,5 @@
+{
+	"domain": "*.delorenzo.family",
+	"certUrl": "https://acme-v02.api.letsencrypt.org/acme/cert/03f988043babcd6d6f8b29df8e8b23d36469",
+	"certStableUrl": "https://acme-v02.api.letsencrypt.org/acme/cert/03f988043babcd6d6f8b29df8e8b23d36469"
+}
